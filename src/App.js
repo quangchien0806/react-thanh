@@ -1,12 +1,19 @@
+import { Routes, Route } from "react-router-dom";
+
 import "./App.css";
-import State from "./components/State";
-import Effect from "./components/Effect/index";
+import Crud from "./components/Crud";
+import Effect from "./components/Effect";
+import Reducers from "./components/Reducers";
+// import State from "./components/State";
 
 function App() {
   return (
-    <div>
-      <Effect />
-    </div>
+    <Routes>
+      <Route path="/" element={<Crud />} />
+      {/* <Route path="/" element={<State />} /> */}
+      <Route path="/effect" element={<Effect />} />
+      <Route path="/reducers" element={<Reducers />} />
+    </Routes>
   );
 }
 

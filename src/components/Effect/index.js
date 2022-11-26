@@ -1,25 +1,38 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Effect = () => {
+  const [counter, setCounter] = useState(0);
   const [name, setName] = useState("");
 
-  useEffect(() =>{
-    
-  })
+  useEffect(() => {
+    document.title = "Hello, " + name;
+    console.log(name);
+  }, []);
+  useEffect(() => {
+    document.title = "Hello, " + name;
+    console.log(name);
+  });
+  useEffect(() => {
+    document.title = "Hello, " + name;
+    console.log(name);
+  }, [name]);
+  console.log(counter);
 
   return (
-    <div>
-      <form>
-        <label>Name</label>
-        <input
-          value={name}
-          type="text"
-          onChange={(e) => setName(e.target.value)}
-          placeholder="Enter name"
-        />
-        <div>{name}</div>
-      </form>
-    </div>
+    <>
+      <h1 className="Greeting">
+        Hello, {name}
+        <input type="text" onChange={(e) => setName(e.target.value)} />
+        <button onClick={() => setCounter(counter + 1)}>Click</button>
+      </h1>
+      <button>
+        <Link to={`/`}>Next State</Link>
+      </button>
+      <button>
+        <Link to={`/reducers`}>Next Reducers</Link>
+      </button>
+    </>
   );
 };
 

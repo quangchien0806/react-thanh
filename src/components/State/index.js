@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const State = () => {
   const [form, setForm] = useState({
@@ -133,7 +134,12 @@ const State = () => {
           </div>
         </div>
       </form>
-      <button>Next</button>
+      <button>
+        <Link to={`/effect`}>Next Effect</Link>
+      </button>
+      <button>
+        <Link to={`/reducers`}>Next Reducers</Link>
+      </button>
     </div>
   );
 };
